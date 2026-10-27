@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MYSTERY MIND: Pecahkan Misterinya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg"></div>
+<canvas id="cf"></canvas>
+
+<!-- BERANDA -->
+<section id="home" class="screen on">
+  <div class="center">
+    <svg id="eye" viewBox="0 0 220 120" aria-hidden="true">
+      <defs>
+        <radialGradient id="ir"><stop offset="0" stop-color="#62e4ff"/><stop offset=".6" stop-color="#3b82ff"/><stop offset="1" stop-color="#b84dff"/></radialGradient>
+        <clipPath id="cl"><path d="M10 60Q110-20 210 60Q110 140 10 60Z"/></clipPath>
+      </defs>
+      <path class="lid" d="M10 60Q110-20 210 60Q110 140 10 60Z" fill="#0a0518" stroke="#b84dff" stroke-width="3"/>
+      <g clip-path="url(#cl)"><g id="pup"><circle cx="110" cy="60" r="32" fill="url(#ir)"/><circle cx="110" cy="60" r="13" fill="#04020a"/><circle cx="102" cy="52" r="5" fill="#fff" opacity=".8"/></g></g>
+    </svg>
+    <h1>MYSTERY MIND</h1>
+    <p class="sub">Pecahkan Misterinya</p>
+    <p class="lore">Di Arsip Sunyi tersimpan dua puluh pintu terkunci. Setiap pintu menyembunyikan satu teka-teki. Hanya pikiran yang tajam yang bisa membukanya.</p>
+    <div class="menu">
+      <button class="btn main" id="bPlay">Mulai Bermain</button>
+      <button class="btn" id="bHow">Cara Bermain</button>
+      <button class="btn" id="bSet">Pengaturan</button>
+    </div>
+    <p class="best" id="best"></p>
+  </div>
+</section>
+
+<!-- PERMAINAN -->
+<section id="game" class="screen">
+  <header class="hud">
+    <button class="icon" id="bMenu" aria-label="Kembali ke menu">☰</button>
+    <div class="lv"><b id="lvTxt">Level 1</b><span>dari 20</span></div>
+    <div class="score" title="Skor">✦ <b id="score">0</b></div>
+    <div class="lives" id="lives" aria-label="Nyawa"></div>
+  </header>
+  <div class="bar"><i id="prog"></i></div>
+
+  <article class="card" id="card">
+    <div class="meta"><span class="badge" id="cat"></span><span class="amb" id="amb"></span></div>
+    <h2 id="title"></h2>
+    <p class="q" id="q"></p>
+    <div id="visBox"></div>
+    <div class="timer" id="timer"><div class="tbar"><i id="tfill"></i></div><span id="ttxt"></span></div>
+
+    <div class="row">
+      <input id="ans" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Ketik jawabanmu di sini…" aria-label="Jawaban">
+      <button class="btn main" id="bAns">Jawab</button>
+    </div>
+    <p class="fb" id="fb" role="status"></p>
+    <div id="hints"></div>
+    <button class="btn ghost" id="bHint">💡 Petunjuk</button>
+  </article>
+</section>
+
+<!-- OVERLAY -->
+<div id="ov"><div class="box" role="dialog" aria-modal="true"></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
